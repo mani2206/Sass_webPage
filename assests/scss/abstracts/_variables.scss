@@ -1,0 +1,40 @@
+$white: #fff;
+$black: #000;
+$secondary: #E9204F;
+$grey: #7A7A7A;
+$lightgrey: rgb(226, 226, 226);
+$voilet: #223a66 ;
+
+// Buttons 
+$buttons: 'red' #E9204F, 'white'#fff;
+
+// Start font style
+$font-family: "Overpass", Sans-serif;
+
+$font-r: (
+    font-family: $font-family,
+    font-weight: 400,
+);
+$font-m: (
+    font-family: $font-family,
+    font-weight: 500,
+);
+$font-mb: (
+    font-family: $font-family,
+    font-weight: 600,
+);
+$font-b: (
+    font-family: $font-family,
+    font-weight: 700,
+);
+$font-xb: (
+    font-family: $font-family,
+    font-weight: 800,
+);
+
+@mixin font-style($i) {
+    @each $property, $value in $i{
+        #{$property}: $value;
+    }
+}
+// End font style

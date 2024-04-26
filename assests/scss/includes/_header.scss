@@ -1,0 +1,76 @@
+// Start header
+.navbar-section{
+    nav{
+        height: 60px;
+        background-color: $voilet;
+        .content{ 
+            .menu-icon{
+                font-size: 27px;
+                width: 50px;
+            }
+            .logo{
+                .navbar-brand{
+                    font-size: 20px;
+                    @include font-style($font-b);
+                    @include media-min-sm{
+                        font-size: 16px;
+                    }
+                }
+            }
+            .margins{
+                @include media-min-md{
+                    // margin:0 10px 0 0;
+                }
+               
+            }
+            .links{
+                position: absolute;
+                top: 75px;
+                left: -110%;
+                transition: all 0.3s ease;
+                background: $black;
+                @include font-style($font-m);
+                .nav-item{
+                    .nav-link{
+                        font-size: 16px;
+                    }
+                    @include media-min-lg{
+                        .nav-link::after{
+                            content: '';
+                            width: 0px;
+                            height: 2px;
+                            margin-top: 3px;
+                            display: block;
+                            transition: 0.5s;
+                        }
+                        .live::after, .nav-link:hover::after{
+                            width: 25px;
+                            background-color: $secondary;
+                        }
+                    }
+                }
+                @include media-min-lg{
+                    position: unset;
+                    background: none;
+                }
+            }
+            .icon{
+                font-size: 18px;
+            }
+            @include media-max-lg{
+                #show-menu:checked ~ .links{
+                   left: 0%;
+                }
+            }
+        }
+        @include media-min-lg{
+            background-color: $voilet;
+        }
+    }
+    @include media-max-md{
+        position: fixed;
+        z-index: 3;
+        width: 100%;
+    }
+}
+// End header
